@@ -1,15 +1,15 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
   title: 'Stockton Street Co',
-  author: 'Tails Azimuth',
+  author: '',
   headerTitle: 'Stockton Street Co',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description: 'Information consulting services and products',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://stockton-street-dot-com.vercel.app/',
   siteRepo: 'https://github.com/johngrant/stockton-street-dot-com',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
+  socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card-2.png`,
   mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'address@yoursite.com',
   github: 'https://github.com',
