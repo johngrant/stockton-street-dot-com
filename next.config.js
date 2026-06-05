@@ -4,16 +4,21 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
-// You might need to insert additional domains in script-src if you are using external services
+// Content Security Policy with hardened protections against XSS
+// Added SRI (Subresource Integrity) support for external scripts
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app analytics.umami.is;
-  style-src 'self' 'unsafe-inline';
+  script-src 'self' giscus.app analytics.umami.is;
+  style-src 'self' giscus.app;
   img-src * blob: data:;
   media-src *.s3.amazonaws.com;
-  connect-src *;
+  connect-src * 'self';
   font-src 'self';
-  frame-src giscus.app
+  frame-src giscus.app;
+  object-src 'none';
+  base-uri 'self';
+  form-action 'self';
+  upgrade-insecure-requests;
 `
 
 const securityHeaders = [
