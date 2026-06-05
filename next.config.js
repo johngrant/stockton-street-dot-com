@@ -8,8 +8,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 // Added SRI (Subresource Integrity) support for external scripts
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' giscus.app analytics.umami.is;
-  style-src 'self' giscus.app;
+  script-src 'self' 'unsafe-inline' giscus.app analytics.umami.is;
+  style-src 'self' 'unsafe-inline' giscus.app;
   img-src * blob: data:;
   media-src *.s3.amazonaws.com;
   connect-src * 'self';
